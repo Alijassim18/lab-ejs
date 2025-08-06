@@ -59,7 +59,10 @@ app.get('/menu',(req,res)=>{
 })
 
 
-
+  app.get('/menu/:categories', (req, res) => {
+    const category = req.params.categories
+    res.render('categories.ejs', {menu: RESTAURANT.menu, category})
+  })
 
 
 app.listen(3000,()=>{
